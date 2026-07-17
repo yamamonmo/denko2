@@ -20,8 +20,12 @@ const App = () => {
     setIsAnswerVisible(false);
   };
 
-  const questionImageSrc = `/images/q_${currentProblem}.png`;
-  const answerImageSrc = `/images/a_${currentProblem}.png`;
+  const baseUrl = typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL
+    ? import.meta.env.BASE_URL
+    : '/';
+
+  const questionImageSrc = `${baseUrl}images/q_${currentProblem}.png`;
+  const answerImageSrc = `${baseUrl}images/a_${currentProblem}.png`;
 
   return (
     <div style={styles.page}>
